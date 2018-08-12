@@ -1,0 +1,9 @@
+
+table {
+    border-collapse: collapse;
+    width: 700px;
+}
+
+th {
+    height: 30px;
+}

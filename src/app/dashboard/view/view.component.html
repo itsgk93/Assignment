@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="col-md-7" >
+    <img class="img-responsive" src="assets/images/dashboard.png" >
+    <h4>A data dashboard is an information management tool that visually tracks, analyzes and displays key performance indicators (KPI), 
+      metrics and key data points to monitor the health of a business, department or specific process. They are customizable to meet
+       the specific needs of a department and company. </h4>  </div>
+  <div class="col-md-1"></div>
+    <div class="col-md-4">
+    <h1>Active Users List</h1><br>
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+      <tr style="background-color: midnightblue; color: white" >
+        <th class="text-center" >Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users"> 
+        <td>{{ user.name | titlecase }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div  style="margin-top: 100px">
+  <span class="label label-primary">Last Updated Date is : {{ today | date }} </span> </div>
+  </div></div>

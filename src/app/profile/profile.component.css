@@ -1,0 +1,22 @@
+pre
+ {
+     white-space:pre-wrap;
+     border: transparent;
+     background-color: transparent;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     font-size: 16px;
+     color: navy
+     
+ }
+ p
+ {
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     font-size: 16px;
+     color: darkslategrey
+     
+ }
+ h4 {
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     color: orangered;
+     font-weight: bold; 
+ }

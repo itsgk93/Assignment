@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="col-md-7">
+
+    <div class="page-header">
+    <h1>User List</h1></div>
+    
+      <table class="table table-bordered table-striped table-hover">
+    <thead>
+      <tr>
+        <th class="text-center">ID</th>
+        <th class="text-center">Name</th>
+        <th class="text-center">&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name | firstcharcateruppercase }}</td>
+        
+        <td>
+          <button class="btn btn-info"
+                        (click)="showEditUserForm(user)">Edit
+                       <i class="fa fa-edit"></i>
+              </button>
+          <button class="btn btn-danger"
+                       (click)="removeUser(user)">Delete
+                       <i class="fa fa-minus"></i>
+            </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="btn btn-success"
+               (click)="showAddUserForm()">Add New User </button>
+  <br />
+  <br />
+
+  <form *ngIf="userForm">
+    <h2>Add New User</h2>
+    <p>ID: <input type="text" 
+                           name="id"
+                           [(ngModel)]="newUser.id" /></p>
+    <p>Name: <input type="text"
+                                 name="name"
+                                 [(ngModel)]="newUser.name" /></p>
+    <p>
+      <button type="button"
+                   class="btn btn-primary"
+                   (click)="saveUser(newUser)">Submit</button>
+      <button type="button"
+                   class="btn btn-warning"
+                   (click)="cancelNewUser()">Cancel</button>
+    </p>
+   </form>
+
+    <form *ngIf="editUserForm">
+    <h2>Edit User Details</h2>
+    <p>ID:   <input type="text"
+                           name="id" 
+                           [(ngModel)]="editedUser.id" /></p>
+    <p>Name: <input type="text"
+                                 name="name"
+                                 [(ngModel)]="editedUser.name" /></p>
+    
+    <p>
+      <button type="button"
+                   class="btn btn-primary"
+                   (click)="updateUser(editedUser)">Submit</button>
+      <button type="button"
+                   class="btn btn-warning"
+                   (click)="cancelEdits()">Cancel</button>
+    </p>
+   </form>
+  </div>
+
+<div class="col-md-1"></div>
+  <div class="col-md-4">
+    <div class="page-header">
+    <h2> Concepts used in this application:</h2><br/></div>
+    <div class="list-group">
+    <li class="list-group-item list-group-item-success">CRUD Operations</li>
+    <li class="list-group-item list-group-item-info">Communication between Multiple Modules</li>
+    <li class="list-group-item list-group-item-warning">Communication between Multiple Components</li>
+    <li class="list-group-item list-group-item-danger">Routing</li>
+    <li class="list-group-item list-group-item-success">Service</li>
+    <li class="list-group-item list-group-item-info">Reactive Forms and Form Validations</li>
+    <li class="list-group-item list-group-item-warning">Pipes</li>
+    <li class="list-group-item list-group-item-danger">Custom Pipe</li>
+    </div>
+  </div>
+</div>
